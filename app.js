@@ -17,7 +17,8 @@ var LocalStrategy = require("passport-local");
 var flash = require("connect-flash");
 
 //seedDB();
-mongoose.connect("mongodb://localhost/myBlog");
+//mongoose.connect("mongodb://localhost/myBlog");
+mongoose.connect("mongodb://alex:alex@ds155150.mlab.com:55150/myblog");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));

@@ -59,7 +59,7 @@ router.post("/blogs",middleware.isLoggedIn, function(req,res){
 router.get("/blogs/:id", function(req, res) {
   Blog.findById(req.params.id).populate("comments adds").exec(function(err, findShow){
      if(err){
-         console.log("err");
+         console.log(err);
      } else {
         req.flash("success", "Welcome to the Blog Page!");
         res.render("blog/show", {blog: findShow});
