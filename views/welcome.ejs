@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/welcome.css">
+</head>
+<body>
+ 
+<div class="button-header">
+    <h1>Welcome to MyBlog</h1>
+    <a class="btn btn-default" href='/home'>View Home Page!</a>
+</div>
+
+<ul class="slideshow">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+<script>
+    $(document).ready(function(){
+       $('a').click(function(){
+         $('.button-header').fadeOut('fast');
+       });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+body {
+	position: relative;
+	margin: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+/*Menu styling - basic*/
+.menu {
+	background: url(http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png) repeat left top;
+	height: 100%;
+	width: 285px;
+	position: fixed;
+	left: -285px;
+}
+
+/*Body Image Styling*/
+
+.main-body{
+	background: url('http://res.cloudinary.com/nikolaalex/image/upload/v1491297142/blog-image_e2gpmi.jpg'); 
+	  height: 100%;
+	  width: 100%;
+	  -webkit-background-size: cover;
+	     -moz-background-size: cover;
+	       -o-background-size: cover;
+	          background-size: cover;
+	          position: fixed;
+}
+
+.menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border-top: 10px solid black;
+}
+
+.menu li {
+	font-family: Monospace;
+	border-bottom: 1px solid white;
+	padding: 5px 0 5px 15px;
+}
+
+.menu a {
+	text-decoration: none;
+	color: white;
+	font-size: 25px;
+	cursor: pointer;
+	text-transform: uppercase;
+	text-shadow: 0.5px 0.5px 2px #d9d9d9;
+}
+.menu a:active {
+	color: #666666;
+	padding: 2px 5px;
+}
+
+.menu a:hover {
+	color: #66ff66;
+	text-shadow: 0.5px 0.5px 2px #b3ffb3;
+}
+
+.icon-close{
+	color: white;
+	cursor: pointer;
+	padding: 5px 0 5px 15px;
+}
+.icon-close:hover {
+	color: #66ff66;
+	text-shadow: 0.5px 0.5px 2px #b3ffb3;
+}
+.icon-open {
+	color: white;
+	font-family: Monospace;
+	font-size: 25px;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 5px 0 5px 15px;
+	cursor: pointer;
+}
+
+.icon-open i {
+	margin-left: 5px;
+}
+
+.text {
+	text-align: center;
+	padding-top: 25vh;
+	width: 700px;
+	margin: auto;
+}
+.text h1 {
+	border-bottom: 1px solid #cccccc;
+	color: #1a1a1a;
+	font-family: cursive;
+	padding-bottom: 20px;
+}
+
+.text p{
+	color: #1a1a1a;
+	font-family: serif;
+	padding-top: 15px;
+	opacity: 0.9;
+	font-size: 15px;
+}
+
+.text p .enjoy{
+	color: #001a1a;
+	opacity: 1;
+	font-size: 20px;
+	font-family: cursive;
+}

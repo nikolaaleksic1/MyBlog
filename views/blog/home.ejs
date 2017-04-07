@@ -1,0 +1,56 @@
+<%include ../partials/headerhome%>
+
+<div class="menu">
+    <!--Menu Icon-->
+    <div class="icon-close">
+        <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+    </div>
+    <!--Menu skeleton-->
+    <ul>
+        <li><a href="/blogs">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+</div>
+
+<!--Main BodyPage-->
+<div class="main-body">
+    <div class="icon-open">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+        Menu
+    </div>    
+    <div class="text">
+        <h1>Welcome to the Blog Page!!</h1>
+        <p>This is the page where you can create great blog about yourself.
+        Make pictures, text and so on. On left side You can find Menu and see more about 
+        this Blog.So what are you waiting for?</p>
+        <p>Just Go and <span class="enjoy">Enjoy</span>!!</p>
+    </div>
+</div>
+
+<script>
+    var main = function() {
+        $('.icon-close').click(function(){
+           $('.menu').animate({
+              left: "-285px",
+              opacity: 5
+           }, 700);
+        $('body').animate({
+              left: "0px",
+              opacity: 5
+        }, 700)
+        });
+        
+        $('.icon-open').click(function(){
+           $('.menu').animate({
+               left: "0px"
+           }, 300); 
+           
+           $('body').animate({
+              left: "285px"
+           }, 300);
+        });
+    }
+    $(document).ready(main);
+</script>
+<%include ../partials/footer%>

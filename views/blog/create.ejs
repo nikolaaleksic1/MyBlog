@@ -1,0 +1,18 @@
+<%include ../partials/header%>
+
+
+
+<div class="container">
+    <h1>Welcome to Create Page</h1>
+    <div class="thumbnail">
+        <form action="/blogs/<%=blog._id%>" method="POST">
+            <div class="form-group">
+                <span class="label label-default">Description</span>
+               <textarea class="form-control" name="body" placeholder="write anything you want about you!"></textarea> 
+            </div>
+            <button class="btn btn-primary btn-block">Submit</button>
+        </form>
+    </div>
+</div>
+
+<%include ../partials/footer%>

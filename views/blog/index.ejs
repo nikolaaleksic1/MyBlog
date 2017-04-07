@@ -1,0 +1,30 @@
+<%include ../partials/header%>
+
+<div class="container">
+    <div class="jumbotron">
+      <h1>Welcome to the BlogPage</h1>  
+      <a class="btn btn-primary btn-large" href="/blogs/new">Add new Blog</a>
+    </div>
+</div>
+
+
+<div class="container">
+    <div id="allblogs" class="row">
+            <%blogs.forEach(function(blog){ %>
+            <div class="col-md-3">
+                <div class="thumbnail">
+                    <img src="<%= blog.image %>">
+                    <div class="text-blog">
+                        <h6> <%=blog.name%> <%=blog.familyname%> </h6>
+                        <p><%=blog.description%></p>
+                        <a class="btn btn-info" href="/blogs/<%=blog._id%>">View</a>
+                        <span class="dateblog"><em>Submited: <%= blog.created.toDateString() %></em></span>
+                    </div>
+                </div>
+                
+            </div>
+            <% }); %>
+    </div>
+</div>
+
+<%include ../partials/footer%>

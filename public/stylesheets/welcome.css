@@ -1,0 +1,110 @@
+
+body{
+    background-color: #fff;
+}
+
+.button-header{
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    padding-top: 30vh;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 20px;
+    width: 500px;
+}
+
+h1 {
+    font-family: serif;
+    color: #1a0000;
+    text-shadow: 2px 2px #cccccc;
+}
+.button-header a {
+    font-family: cursive;
+    color: #1a0000;
+    text-shadow: 0.5px 0.5px #cccccc;
+}
+
+
+
+.slideshow {
+    list-style: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+}
+
+.slideshow li{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: slideImages 60s linear infinite;
+}
+
+.slideshow li:nth-child(1){
+    background-image: url(http://res.cloudinary.com/nikolaalex/image/upload/v1491382441/coffee-1869820_1920_jjcldp.jpg);
+}
+
+.slideshow li:nth-child(2){
+    background-image: url(http://res.cloudinary.com/nikolaalex/image/upload/v1491382462/breakfast-2151201_1920_sbuljr.jpg);
+    animation-delay: 10s;
+}
+
+.slideshow li:nth-child(3){
+    background-image: url(http://res.cloudinary.com/nikolaalex/image/upload/v1491382439/enjoyment-1869206_1920_dwkpix.jpg);
+    animation-delay: 20s;
+}
+
+.slideshow li:nth-child(4){
+    background-image: url(http://res.cloudinary.com/nikolaalex/image/upload/v1491382444/borgward-hansa-2161701_1920_pbhmdg.jpg);
+    animation-delay: 30s;
+}
+
+.slideshow li:nth-child(5){
+    background-image: url(http://res.cloudinary.com/nikolaalex/image/upload/v1491382442/countryside-2175353_1920_yevuts.jpg);
+    animation-delay: 40s;
+}
+
+.slideshow li:nth-child(6){
+    background-image: url(http://res.cloudinary.com/nikolaalex/image/upload/v1491382426/adult-2178996_1920_m6bxfu.jpg);
+    animation-delay: 50s;
+}
+
+@keyframes slideImages {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+        transform: rotate(0deg) scale(1.1);
+    }
+    
+    10%{
+        opacity: 1;
+        animation-timing-function: ease-out;
+        transform: rotate(0deg) scale(1.2);
+    }
+    20%{
+        opacity: 1;
+        transform: rotate(0deg) scale(1.3);
+    }
+    30%{
+        opacity: 0;
+        transform: rotate(0deg) scale(1.4);
+    }
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+    opacity: 1;
+}

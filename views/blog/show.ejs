@@ -1,0 +1,133 @@
+<%include ../partials/header%>
+
+<!--<div  class="container">-->
+<!--    <h1 class="blogname text-center">Your Blog Page</h1>-->
+<!--    <div class="header">-->
+<!--        <div class="col-md-3">-->
+<!--            <div class="thumbnail">-->
+<!--                <img src="<%= blog.image %>">-->
+<!--                <h3 class="text-center"><strong><%=blog.name%> <%=blog.familyname%></strong></h3>-->
+<!--                <a class="btn btn-info btn-sm btn-block" href="/blogs/<%=blog._id%>/edit">Edit</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-9">-->
+<!--            <div class="information text-justify">-->
+<!--                <h3>AboutMe</h3>-->
+<!--                <h6>MyBirthDay: <%=blog.year%></h6>-->
+<!--                <h6>City: <%=blog.city%></h6>-->
+<!--                <h6>Work: <%=blog.work%></h6>-->
+<!--                <p><%=blog.description%></p> -->
+<!--                 <% if(currentUser && blog.author.id.equals(currentUser._id)) {%>-->
+<!--                <a class="btn btn-info btn-sm" href="/blogs/<%=blog._id%>/editdesc">Edit</a>-->
+<!--                 <form id="buttondelete">-->
+<!--                    <button id="remove" class="btn btn-danger btn-sm">Delete</button>-->
+<!--                </form>-->
+<!--                <% } %>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    <form class="text-right" action="/blogs/<%=blog._id%>/?_method=DELETE" method="POST">-->
+<!--        <% if(currentUser && blog.author.id.equals(currentUser._id)) {%>-->
+<!--        <button class="btn btn-danger btn-sm">Delete</button>-->
+<!--        <% } %>-->
+<!--    </form>-->
+<!--    <hr class="hr">-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<div class="showpage container">
+  <h1 class="blogname text-center">Your Blog Page</h1>
+  
+  <div class="row">
+    
+    <div class="profile col-md-3">
+        <div class="thumbnail">
+            <img src="<%= blog.image %>">
+            <h3 class="text-center"><strong><%=blog.name%> <%=blog.familyname%></strong></h3>
+            <a class="btn btn-info btn-sm btn-block" href="/blogs/<%=blog._id%>/edit">Edit</a>
+        </div>
+    </div>  <!--col-md-3 div-->
+    
+    <div class="col-md-9">
+        <div class="information text-justify">
+            <h3>AboutMe</h3>
+            <h6>MyBirthDay: <%=blog.year%></h6>
+            <h6>City: <%=blog.city%></h6>
+            <h6>Work: <%=blog.work%></h6>
+            <p><%=blog.description%></p> 
+            <% if(currentUser && blog.author.id.equals(currentUser._id)) {%>
+                <a class="btn btn-info btn-sm" href="/blogs/<%=blog._id%>/editdesc">Edit</a>
+                <form id="buttondelete">
+                    <button id="remove" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+                <% } %>
+        </div>
+    </div> <!--col-md-9 div-->
+    
+    <div>
+        <form class="text-right" action="/blogs/<%=blog._id%>/?_method=DELETE" method="POST">
+            <% if(currentUser && blog.author.id.equals(currentUser._id)) {%>
+            <button class="btn btn-danger btn-sm">Delete</button>
+            <% } %>
+        </form>
+    </div>
+  </div>  <!--row div-->
+  <hr class="hr">
+</div>  <!-- container div-->
+
+
+
+ <!--container for add blog text-->
+<div class="container">
+    <div>
+        <% if(currentUser && blog.author.id.equals(currentUser._id)) {%>
+        <a class="btn btn-default btn-sm" href="/blogs/<%=blog._id%>/adds/new">AddBodyBlog</a>
+        <% } %>
+        <div>
+        <% blog.adds.forEach(function(add){ %>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3><%=add.title%></h3>
+            </div>
+            <div class="body-content panel-body">
+                <p class="text-justify "> <%= add.body %> </p>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+    </div>
+</div>
+<hr>
+
+<!--container for comments-->
+
+<div class="container">
+    <div>
+        <h3 class="text-center">Add few Comments</h3>
+        <a class="btn btn-primary" href="/blogs/<%=blog._id%>/comments/new">Add Comment</a>
+        <% blog.comments.forEach(function(comment){ %>
+        <div class="commentshow">
+            <div class="thumbnail">
+                <h4><%=comment.author.username%></h4>
+                <p><%=comment.text%> <strong>(<%= comment.date.toDateString() %>)</strong></p>
+                <% if(currentUser && comment.author.id.equals(currentUser._id)) {%>
+                <a class="btn btn-info btn-xs" href="/blogs/<%=blog._id%>/comments/<%=comment._id%>/edit">Edit</a>
+                <form id="buttondelete" action="/blogs/<%=blog._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger btn-xs">Delete</button>
+                    <% } %>
+                </form>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function(){
+        $('#remove').click(function(){
+            $('.information').remove();
+        });
+    });
+</script>
+<%include ../partials/footer%>

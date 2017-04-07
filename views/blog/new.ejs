@@ -1,0 +1,29 @@
+<%include ../partials/header%>
+
+<h1>Welcome to Create Page</h1>
+
+<div class="container">
+    <div class="thumbnail">
+        <form action="/blogs" method="POST">
+            <div class="form-group">
+                <span class="label label-default">Name</span>
+                <input class="form-control" type="text" name="name" placeholder="name"> 
+            </div>
+            <div class="form-group">
+                <span class="label label-default">FamilyName</span>
+                <input class="form-control" type="text" name="familyname" placeholder="familyname"> 
+            </div>
+            <div class="form-group">
+                <span class="label label-default">Profile-Image</span>
+               <input class="form-control" type="text" name="image" placeholder="image-url">
+            </div>
+            <div class="form-group">
+                <span class="label label-default">Description</span>
+               <textarea class="form-control" name="description" placeholder="write little about you!"></textarea> 
+            </div>
+            <button class="btn btn-primary btn-block">Submit</button>
+        </form>
+    </div>
+</div>
+
+<%include ../partials/footer%>
