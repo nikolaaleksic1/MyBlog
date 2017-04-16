@@ -1,0 +1,17 @@
+<%include ../partials/header%>
+
+<h1>Welcome to Add Blog Page</h1>
+
+<div class="container">
+    <div class="thumbnail">
+        <form action="/blogs/<%=blog._id%>/adds" method="POST">
+            <div class="form-group">
+                <span class="label label-default">Add Image</span>
+               <input class="form-control" type="text" name="add[image]" placeholder="Add Image"> 
+            </div>
+            <button class="btn btn-primary btn-block">Submit</button>
+        </form>
+    </div>
+</div>
+
+<%include ../partials/footer%>

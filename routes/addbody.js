@@ -25,7 +25,7 @@ router.post("/blogs/:id/adds",middleware.isLoggedIn, function(req, res){
           } else {
              blog.adds.push(add);
              blog.save();
-             req.flash("success", "Succesfully Added Tetx!");
+             req.flash("success", "Succesfully Added Text!");
              res.redirect("/blogs/" + req.params.id);
           }
         });
